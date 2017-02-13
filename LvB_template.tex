@@ -1,0 +1,351 @@
+% Type of the document
+\documentclass{beamer}
+
+% elementary packages:
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+% additional packages
+\usepackage{bbm}
+
+% packages supplied with ise-beamer:
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+% Change the pictures here:
+% logobig and logosmall are the internal names for the pictures: do not modify them. 
+% Pictures must be supplied as JPEG, PNG or, to be preferred, PDF
+\pgfdeclareimage[height=2cm]{logobig}{hulogo}
+% Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
+% right corner:
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+% Title page outline:
+% use this number to modify the scaling of the headline on title page
+\renewcommand{\titlescale}{1.0}
+% the title page has two columns, the following two values determine the percentage each one should get
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+% Define the title.Don't forget to insert an abbreviation instead 
+% of "title for footer". It will appear in the lower left corner:
+\title[Quiz 19]{Mathematical Foundations\\
+ for Finance and Insurance \\
+}
+% Define the authors:
+\authora{Kristian Boroz } % a-c
+%\authorb{Stephan Stahlschmidt}
+%\authorc{}
+
+% Define any internet addresses, if you want to display them on the title page:
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{}
+\def\linkc{}
+% Define the institute:
+\institute{Ladislaus von Bortkiewicz Chair of Statistics \\
+Humboldt--Universit{\"a}t zu Berlin \\}
+
+% Comment the following command, if you don't want, that the pdf file starts in full screen mode:
+\hypersetup{pdfpagemode=FullScreen}
+
+%Start of the document
+\begin{document}
+
+% create the title slide, layout controlled in beamerdefs.sty and the foregoing specifications
+\frame[plain]{
+\titlepage
+}
+
+% The titles of the different sections of you talk, can be included via the \section command. The title will be displayed in the upper left corner. To indicate a new section, repeat the \section command with, of course, another section title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% (A numbering of the slides can be useful for corrections, especially if you are
+% dealing with large tex-files)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Quiz 19}
+Prove Theorem 52 as an application of Theorem 38, instead
+of using Lemma 51.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Outline}
+
+\begin{enumerate}
+\item Motivation \quad \checkmark
+\item Theorems
+\item Proof
+\end{enumerate}
+}
+
+\section{Theorems}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Theorem 38}
+\begin{theorem}[Dvoretzky, Kiefer, and Wolfowitz]
+
+Let F be defined on $\mathbb{R}$, $\exists C > 0\:(not\:depending\:on\:F)\:such\:that\:$
+
+\end{theorem}
+\[
+  P(D_{n}>d)<Cexp(-2nd^{2}),\:\:\:\:d>0
+\]
+$\forall n=1,2,...$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Theorem 52}
+\begin{theorem}[52]
+Let\:$0<p<1$.\:Suppose\:that\:$\xi_{p}$\:is\:the\:unique\:solution\:$x$\:of\\$F(x-)\leq p\leq F(x)$.\:Then\:for\:every\:$\epsilon>0$
+\end{theorem}
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2}),\forall n
+\]
+$where\:\delta_{\epsilon}=min(F(\xi_{p}+\epsilon)-p,p-F(\xi_{p}+\epsilon)$
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(D_{n}>d)<Cexp(-2nd^{2})
+\]
+\end{theorem}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(D_{n}>d)<Cexp(-2nd^{2})
+\]
+\end{theorem}
+$D_{n}=KS-Distance=sup|F_{n}(x)-F(x)|$
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(sup|F_{n}(x)-F(x)|>d)<Cexp(-2nd^{2})
+\]
+\end{theorem}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(|F_{n}(x)-F(x)|>d)\leq\:Cexp(-2nd^{2})
+\]
+\end{theorem}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(|F_{n}(x)-F(x)|>d)\leq\:Cexp(-2nd^{2})
+\]
+\end{theorem}
+Using the Strong Consistency property and the following definition: 
+Given a sample $X_{1},...,X_{n}$ of observations on $F$, the sample $p$th
+quantile $\widehat{{\xi}_{pn}}$ or $\widehat{{\xi}_{p}}$, is defined as the $p$th quantile of the sample
+distribution function $F_{n}$
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq\:Cexp(-2nd^{2})
+\]
+\end{theorem}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq\:Cexp(-2nd^{2})
+\]
+\end{theorem}
+Using the following notation:
+$\delta_{\epsilon}=F(\zeta_{p}+\epsilon)-p\rightarrow\delta_{\epsilon}\sim\epsilon$ 
+
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq\:2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq\:Cexp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+
+For any integer $n$ and any $\lambda$ not less than $\sqrt{log(2)/2}$
+and $\gamma n^{-1/6}$where $\gamma=1.0841$, we have:
+\[
+ P(D_{n}>n)\leq exp(-2\lambda^{2})
+\]
+
+\begin{proof}
+
+
+First Step:
+\\where $n\geq39$ and $\lambda\leq\frac{\sqrt{n}}{2}$:
+$C=3.61$\\
+\\
+Second Step:
+\\ where $n\leq38$ and $\lambda>\frac{\sqrt{n}}{2}$:
+$C=2$
+\end{proof}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Proof}
+\begin{theorem}[52]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq\:2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+\begin{theorem}[38]
+\[
+  P(\:|\:\widehat{{\xi}_{pn}}-\xi_{p}|>\epsilon)\leq\:2exp(-2n\delta_{\epsilon}^{2})
+\]
+\end{theorem}
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\section{Further Information}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Further Information}
+
+
+\begin{thebibliography}{aaaaaaaaaaaaaaaaa}
+\beamertemplatearticlebibitems
+\bibitem{Oetiker:2006}
+Massart 
+\newblock{\em The
+tight constant in the Dvoretzky-Kiefer-Wolfowitz inequality}
+\newblock The Annals of Probability, Vol 18, No.3, 1269-1283 (1990)
+\beamertemplatebookbibitems
+\bibitem{Eckel:2004}
+Dudley
+\newblock {\em Uniform
+Central Limit Theorems}
+\newblock Cambridge
+University Press, 2. Ed. (2014)
+\end{thebibliography}
+}
+
+
+
+% Define the end of the document:
+\end{document}
