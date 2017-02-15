@@ -1,0 +1,168 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{bbm}
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+\pgfdeclareimage[height=3.5cm]{logobig}{hucaselogo.pdf}
+\pgfdeclareimage[height=0.7cm]{logosmall}{LOB_Logo.pdf}
+
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+\title[MSM: Quiz 15a]{Selected Topics in Mathematical Statistics, Quiz 15a}
+\authora{Alma Osmic}
+\authorb{}
+\authorc{}
+
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{http://case.hu-berlin.de}
+\def\linkc{}
+
+\institute{Ladislaus von Bortkiewicz Chair of Statistics \\
+Humboldt--Universit{\"a}t zu Berlin \\}
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\begin{document}
+
+% 0-1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame[plain]{
+
+\titlepage
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Quiz 15a}
+\frame{
+\frametitle{Quiz 15a}
+\textbf{Properties of $M_X$:}
+\vfill
+\begin{itemize}
+ \item $M_{X}(0) = 1$
+ \item $M_{aX}(t) = M_{X}(at), \ \forall a \in \mathbb{R}$
+ \item $EX^{n} = \frac{d^n}{dt^n}M_{X}(0)$
+ \item Let $X_{1},..., X_{n}$ iid, $S_n = \sum_{i = 1}^{n} X_i$ then $M_{S_n}(t) = \prod_{i=1}^{n} M_{X_i}(t)$
+\end{itemize}
+
+\vfill
+Quiz 15a: Verify the properties of $M_X$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Quiz 15a}
+
+The Moment Generating Function is defined as:
+
+$$M_{X}(t) = E[e^{t^{T}X}] = \int ... \int exp(t^{T}X)dF_{X}, \ t \in \mathbb{R}^k$$
+
+The idea behind is, that
+$$e^{tX} = 1 + tX + \frac{t^{2}X^{2}}{2!} + \frac{t^{3}X^{3}}{3!} + \cdots,$$
+
+Thus
+
+$$M_{X}(t) = E[e^{tX}] = 1 + tm_1 + \frac{t^{2}m_{2}}{2!} + \frac{t^{3}m_{3}}{3!} + \cdots,$$
+
+where $m_i$ is the $i$th moment.
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Quiz 15a}
+
+
+First and second property:
+\vfill
+\begin{itemize}
+ \item $\mathbf{M_{X}(0) = 1}$:
+	$$M_{X}(0) = \mathbbm{E}[e^{0X}] = \mathbbm{E}[1] = 1$$
+ 
+ \item $\mathbf{M_{aX}(t) = M_{X}(at), \ \forall a \in \mathbb{R}}$ 
+	$$M_{aX} = \mathbbm{E}[e^{atX}] = M_{X}(at)$ for any $a \in \mathbb{R}$$
+
+\end{itemize}
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Quiz 15a}
+
+
+Third property:
+\vfill
+\begin{itemize}
+ \item $\mathbf{EX^{n} = \frac{d^n}{dt^n}M_{X}(0)}$:
+\end{itemize}
+
+\begin{flushleft}
+\begin{aligned}
+ \frac{d^n}{dt^n}M_{X}(t) &= \frac{d^n}{dt^n}E[exp(tX)] = \\
+&= E \left[\frac{d^n}{dt^n} exp(tX) \right] = E[X^{n} exp(tX)]
+\end{aligned}
+\end{flushleft}
+
+calculate for $t = 0$ and we get:
+
+$$E[X^{n}exp(0X)] = E[X^n]$$
+
+}
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+\frametitle{Quiz 15a}
+
+
+Fourth property:
+\vfill
+\begin{itemize}
+ \item \textbf{Let $X_{1},..., X_{n}$ iid, $S_n = \sum_{i = 1}^{n} X_i$ then $M_{S_n}(t) = \prod_{i=1}^{n} M_{X_i}(t)$}
+\end{itemize}
+
+\begin{flushleft}
+\begin{aligned}
+M_{S_n}(t) &= E[exp(tS_n)] = E \left[exp(t\sum_{i=1}^{n}X_{i}) \right] = E \left[exp(\sum_{i=1}^{n}tX_{i}) \right] \\
+				 &= E \left[\prod_{i=1}^{n} exp(tX_{i}) \right] = \prod_{i=1}^{n} E[exp(tX_{i})] = \prod_{i=1}^{n} M_{X_i}(t)
+\end{aligned}
+\end{flushleft}
+
+Last two steps were possible because of the mutual independence of variables $X_i$.
+
+
+}
+
+
+
+
+
+\end{document}
